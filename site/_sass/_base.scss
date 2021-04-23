@@ -150,14 +150,28 @@ aside {
 // Homepage Header
 
 header {
+    background: rgba(32,32,32,.5);
     position: relative;
     width: 100%;
     min-height: auto;
-    @include background-cover;
-    background-position: center;
-    background-image: url('../img/header.jpg');
     text-align: center;
     color: white;
+    &::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: -100;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.25);
+      @include background-cover;
+      background-position: center;
+      background-image: url('../img/portrait.jpg');
+      -webkit-filter: blur(35px);
+      filter: blur(35px);
+      filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='35');
+    }
     .header-content {
         position: relative;
         text-align: center;
